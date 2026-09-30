@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="/admin/">
+  <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="./assets/img/nur-data-logo.svg?v=2">
+  <title>Transactions · Nur Data</title>
+  <link rel="stylesheet" href="./assets/vendor/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/vendor/css/fonts.min.css">
+  <link rel="stylesheet" href="./assets/vendor/css/atlantis.min.css">
+  <link rel="stylesheet" href="./assets/css/admin.css?v=20260907-1">
+</head>
+<body class="legacy-admin">
+  <div class="wrapper">
+    <div class="main-header">
+      <div class="logo-header" data-background-color="blue">
+        <a class="logo legacy-logo" href="dashboard/"><b>M</b><span>NUR DATA</span></a><button class="navbar-toggler sidenav-toggler ml-auto" id="menu"></button>
+      </div>
+      <nav class="navbar navbar-header" data-background-color="blue2">
+        <div class="container-fluid">
+          <div class="ml-auto d-flex align-items-center legacy-profile">
+            <button id="theme" class="legacy-header-button"></button>
+            <div class="avatar-sm">
+              <span class="avatar-img rounded-circle" data-avatar="">A</span>
+            </div>
+            <div>
+              <b data-admin-name="">Admin</b><small data-admin-role="">ADMIN</small>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="sidebar sidebar-style-2">
+      <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+          <div class="user">
+            <div class="avatar-sm float-left mr-2">
+              <span class="avatar-img rounded-circle legacy-avatar" data-avatar="">A</span>
+            </div>
+            <div class="info">
+              <a><span data-admin-name="">Admin</span><span class="user-level" data-admin-role="">ADMIN</span></a>
+            </div>
+          </div>
+          <ul class="nav nav-primary">
+            <li class="nav-item" data-nav="dashboard">
+              <a href="dashboard/">
+              <p>Dashboard</p></a>
+            </li>
+            <li class="nav-item" data-nav="users" data-permission="users">
+              <a href="users/">
+              <p>Manage Users Account</p></a>
+            </li>
+            <li class="nav-item" data-nav="transactions" data-permission="transactions">
+              <a href="transactions/">
+              <p>Users Transactions</p></a>
+            </li>
+            <li class="nav-item" data-nav="finance" data-permission="finance">
+              <a href="finance/">
+              <p>Finance Management</p></a>
+            </li>
+            <li class="nav-section">
+              <h4 class="text-section">More Management</h4>
+            </li>
+            <li class="nav-item">
+              <a href="#">
+              <p>Sales Analysis</p></a>
+            </li>
+            <li class="nav-item">
+              <a href="#">
+              <p>Service Locks</p></a>
+            </li>
+            <li class="nav-section">
+              <h4 class="text-section">Session</h4>
+            </li>
+            <li class="nav-item">
+              <a id="logout" href="javascript:void(0)">
+              <p>Logout</p></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main-panel">
+      <div class="content">
+        <div class="page-inner">
+          <div class="page-header"><h4 class="page-title">All Transactions</h4><ul class="breadcrumbs"><li class="nav-home"><a href="dashboard/"><i class="flaticon-home"></i></a></li><li class="separator"><i class="flaticon-right-arrow"></i></li><li class="nav-item">Transactions</li></ul></div>
+          <div class="card">
+            <div class="card-header">
+              <div class="d-flex align-items-center flex-wrap old-tab-buttons" style="gap:10px"><h4 class="card-title mb-0 mr-auto">All Transactions</h4>
+                <button class="btn btn-secondary btn-sm active" data-status="all">All Transactions (<span data-count="all">0</span>)</button><button class="btn btn-light btn-sm" data-status="1">Successful Transactions (<span data-count="1">0</span>)</button><button class="btn btn-light btn-sm" data-status="0">Fail Transactions (<span data-count="0">0</span>)</button><button class="btn btn-light btn-sm" data-status="2">Pending Transactions (<span data-count="2">0</span>)</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <section class="transaction-export-card" aria-labelledby="transaction-export-title">
+                <div class="transaction-export-heading">
+                  <span class="transaction-export-icon"><i class="fas fa-file-pdf"></i></span>
+                  <div><h5 id="transaction-export-title">Export Transaction Report</h5><p>Download a professionally formatted PDF for your selected reporting period.</p></div>
+                </div>
+                <div class="transaction-export-controls">
+                  <div class="transaction-export-periods" role="group" aria-label="Report period">
+                    <button class="active" type="button" data-export-period="week"><i class="fas fa-calendar-week"></i> This Week</button>
+                    <button type="button" data-export-period="month"><i class="far fa-calendar-alt"></i> This Month</button>
+                    <button type="button" data-export-period="custom"><i class="fas fa-sliders-h"></i> Custom Range</button>
+                  </div>
+                  <div class="transaction-export-dates" id="export-custom-dates" hidden>
+                    <label>From<input id="export-from" class="form-control" type="date"></label>
+                    <label>To<input id="export-to" class="form-control" type="date"></label>
+                  </div>
+                  <button id="export-transactions" type="button" class="btn btn-primary transaction-export-button"><i class="fas fa-download mr-1"></i> Download PDF</button>
+                </div>
+                <small class="transaction-export-note"><i class="fas fa-info-circle"></i> The report follows the active status tab and search filter.</small>
+              </section>
+              <div class="d-flex justify-content-end mb-3"><button id="bulk-delete" class="btn btn-danger btn-sm" disabled><i class="fas fa-trash-alt mr-1"></i> Delete Selected (<span id="selected-count">0</span>)</button></div>
+              <div class="transaction-filter-form"><div class="row"><div class="col-md-4"><div class="form-group"><label>Search</label><input id="search" class="form-control" placeholder="Username, transid, service, mobile"></div></div><div class="col-md-3"><div class="form-group"><label>From</label><input id="from" class="form-control" type="date"></div></div><div class="col-md-3"><div class="form-group"><label>To</label><input id="to" class="form-control" type="date"></div></div><div class="col-md-2"><div class="form-group tx-filter-actions"><button id="filter-transactions" class="btn btn-primary btn-block">Filter</button><button id="reset-transactions" class="btn btn-secondary btn-block">Reset</button></div></div></div></div>
+              <div class="table-responsive">
+                <table class="display table table-striped table-hover w-100">
+                  <thead>
+                    <tr>
+                      <th><input id="select-all-transactions" type="checkbox" aria-label="Select all transactions"></th><th>#</th><th>Username</th><th>Transid</th><th>Network</th><th>Service</th><th>Mobile</th><th>Plan</th><th>Type</th><th>Amount</th><th>Profit</th><th>Date</th><th>Status</th><th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="transactions-body">
+                    <tr>
+                      <td colspan="14" class="text-center py-5">Loading transactions…</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="pager">
+                <span id="page-info"></span>
+                <div>
+                  <button id="prev" class="btn btn-border btn-primary">Previous</button><button id="next" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scrim"></div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js"></script>
+  <script type="module" src="./assets/js/transactions.js?v=20260907-1"></script>
+</body>
+</html>

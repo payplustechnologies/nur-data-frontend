@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" type="image/svg+xml" href="./assets/img/nur-data-logo.svg?v=2">
+  <title>Login · Nur Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/app.css">
+</head>
+<body class="auth-page">
+  <main class="auth-wrap">
+    <section class="auth-intro">
+      <div class="brand-mark"><i class="bi bi-lightning-charge-fill"></i></div>
+      <span class="eyebrow">SECURE DIGITAL PAYMENTS</span>
+      <h1>Everything you need,<br>in one wallet.</h1>
+      <p>Buy data, airtime and essential services with confidence.</p>
+    </section>
+    <section class="auth-card">
+      <div class="mobile-brand"><span class="brand-mark small"><i class="bi bi-lightning-charge-fill"></i></span><b data-brand-name>Nur Data</b></div>
+      <h2>Welcome back</h2>
+      <p class="muted">Enter your details to access your account.</p>
+      <form id="login-form" novalidate>
+        <label for="phone">Phone number</label>
+        <div class="field"><i class="bi bi-phone"></i><input id="phone" type="tel" inputmode="tel" autocomplete="username" placeholder="080 1234 5678" required></div>
+        <label for="password">Password</label>
+        <div class="field"><i class="bi bi-lock"></i><input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required><button class="icon-btn" id="toggle-password" type="button" aria-label="Show password"><i class="bi bi-eye"></i></button></div>
+        <div class="form-links"><a href="./forgot-password/">Forgot password?</a></div>
+        <button class="primary-btn" type="submit"><span>Sign in</span><i class="bi bi-arrow-right"></i></button>
+      </form>
+      <p class="auth-foot">New to <span data-brand-name>Nur Data</span>? <a href="./register/">Create account</a></p>
+    </section>
+  </main>
+  <div class="toast" data-toast></div>
+  <script type="module" src="./assets/js/login.js"></script>
+</body>
+</html>

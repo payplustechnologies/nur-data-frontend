@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Redirecting…</title>
+</head>
+<body>
+  <script>
+    const userPages = new Set([
+      'dashboard', 'developer-api', 'forgot-password',
+      'history', 'login', 'pricing', 'profile',
+      'receipt', 'register', 'reset-password', 'service',
+      'support', 'wallet', 'withdraw'
+    ]);
+    const requested = location.pathname.split('/').filter(Boolean).pop() || '';
+    const target = userPages.has(requested) ? `./users/${requested}/` : './';
+    location.replace(`${target}${location.search}${location.hash}`);
+  </script>
+</body>
+</html>

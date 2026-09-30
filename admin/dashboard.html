@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="./assets/img/nur-data-logo.svg?v=2">
+<title>Admin Dashboard &middot; Nur Data</title>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/vendor/css/bootstrap.min.css">
+<link rel="stylesheet" href="./assets/vendor/css/fonts.min.css">
+<link rel="stylesheet" href="./assets/vendor/css/atlantis.min.css">
+<link rel="stylesheet" href="./assets/css/admin.css?v=20260905-2">
+</head>
+<body class="legacy-admin">
+<div class="wrapper">
+<div class="main-header">
+<div class="logo-header" data-background-color="blue">
+<a class="logo legacy-logo" href="dashboard/"><b>M</b><span>NUR DATA</span></a><button class="navbar-toggler sidenav-toggler ml-auto" id="menu"><span class="navbar-toggler-icon"><i class="icon-menu"></i></span></button>
+</div>
+<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2"><div class="container-fluid"><div class="ml-auto d-flex align-items-center legacy-profile">
+<button id="theme" class="legacy-header-button"><i class="fas fa-adjust"></i></button><div class="avatar-sm"><span class="avatar-img rounded-circle" data-avatar>A</span></div>
+<div>
+<b data-admin-name>Admin</b><small data-admin-role>SUPER ADMIN</small>
+</div>
+</div></div></nav>
+</div>
+<div class="sidebar sidebar-style-2"><div class="sidebar-wrapper scrollbar scrollbar-inner"><div class="sidebar-content">
+<div class="user">
+<div class="avatar-sm float-left mr-2"><span class="avatar-img rounded-circle legacy-avatar" data-avatar>A</span></div>
+<div class="info"><a href="dashboard/"><span><span data-admin-name>Admin</span><span class="user-level" data-admin-role>SUPER ADMIN</span></span></a></div>
+</div>
+<ul class="nav nav-primary">
+<li class="nav-item active"><a href="dashboard/"><i class="fas fa-home"></i><p>Dashboard</p></a></li>
+<li class="nav-item" data-permission="users"><a href="users/"><i class="fas fa-user"></i><p>Manage Users Account</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="transactions"><a href="transactions/"><i class="fas fa-receipt"></i><p>Users Transactions</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="finance"><a href="finance/"><i class="fas fa-wallet"></i><p>Finance Management</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="rewards"><a href="#"><i class="fas fa-percent"></i><p>Referral &amp; CashBack</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="sales"><a href="#"><i class="fas fa-chart-line"></i><p>Sales Analysis</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="charges"><a href="#"><i class="fas fa-percentage"></i><p>Services Charges</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="services_lock"><a href="#"><i class="fas fa-unlock-alt"></i><p>Lock and Unlock Service</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="bundles"><a href="#"><i class="fas fa-file-archive"></i><p>Add Bundles</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="notifications"><a href="#"><i class="fas fa-envelope-open"></i><p>Notification</p>
+<span class="caret"></span></a></li>
+<li class="nav-section">
+<span class="sidebar-mini-icon"><i class="fa fa-ellipsis-h"></i></span><h4 class="text-section">Website Setting</h4>
+</li>
+<li class="nav-item" data-permission="website_setting"><a href="#"><i class="fas fa-cog"></i><p>Website Setting</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="api_integration"><a href="#"><i class="fas fa-globe"></i><p>API Integration</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="payment_gateway"><a href="#"><i class="fas fa-credit-card"></i><p>Payment Gateway</p>
+<span class="caret"></span></a></li>
+<li class="nav-item" data-permission="support"><a href="#"><i class="fas fa-headset"></i><p>Support</p></a></li>
+<li class="nav-section">
+<span class="sidebar-mini-icon"><i class="fa fa-ellipsis-h"></i></span><h4 class="text-section">Session</h4>
+</li>
+<li class="nav-item"><a id="logout" href="javascript:void(0)"><i class="fas fa-sign-out-alt"></i><p>Logout</p></a></li>
+</ul>
+</div></div></div>
+<div class="main-panel"><div class="content">
+<div class="panel-header bg-primary-gradient"><div class="page-inner py-5"><div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+<div>
+<h2 class="text-white pb-2 fw-bold">Dashboard</h2>
+<h5 class="text-white op-7 mb-2">Hi Welcome Back Admin <span data-admin-name>Admin</span>
+</h5>
+</div>
+<div class="ml-md-auto py-2 py-md-0">
+<a href="finance/" class="btn btn-white btn-border btn-round mr-2" data-permission="finance">Credit User</a><a href="users/" class="btn btn-secondary btn-round" data-permission="users">Add Customer</a>
+</div>
+</div></div></div>
+<div class="page-inner mt--5">
+<div class="row" id="stat-grid"><div class="col-sm-6 col-md-3"><div class="card card-stats card-round"><div class="card-body"><p>Loading dashboard&hellip;</p></div></div></div></div>
+<div class="row"><div class="col-md-12" data-permission="transactions"><div class="card">
+<div class="card-header"><div class="d-flex align-items-center">
+<h4 class="card-title">Latest 20 Transactions</h4>
+<a href="transactions/" class="btn btn-primary btn-round ml-auto">View All Transactions</a>
+</div></div>
+<div class="card-body"><div class="table-responsive"><table class="display table table-striped table-hover">
+<thead><tr>
+<th>No</th>
+<th>Username</th>
+<th>Transid</th>
+<th>Network</th>
+<th>Service</th>
+<th>Mobile</th>
+<th>Plan</th>
+<th>Type</th>
+<th>Amount</th>
+<th>Profit</th>
+<th>Date</th>
+<th>Status</th>
+<th>View</th>
+</tr></thead>
+<tbody id="transactions"><tr><td colspan="13" class="text-center text-muted py-4">Loading transactions&hellip;</td></tr></tbody>
+</table></div></div>
+</div></div></div>
+</div>
+</div></div>
+</div>
+<div id="scrim"></div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><script type="module" src="./assets/js/dashboard.js?v=20260905-2"></script>
+</body>
+</html>

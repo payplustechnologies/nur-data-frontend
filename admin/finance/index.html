@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="/admin/">
+  <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.8.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="./assets/img/nur-data-logo.svg?v=2">
+  <title>Finance Management · Nur Data</title>
+  <link rel="stylesheet" href="./assets/vendor/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/vendor/css/fonts.min.css">
+  <link rel="stylesheet" href="./assets/vendor/css/atlantis.min.css">
+  <link rel="stylesheet" href="./assets/css/admin.css?v=20260905-2">
+</head>
+<body class="legacy-admin">
+  <div class="wrapper">
+    <div class="main-header">
+      <div class="logo-header" data-background-color="blue">
+        <a class="logo legacy-logo" href="dashboard/"><b>M</b><span>NUR DATA</span></a><button class="navbar-toggler sidenav-toggler ml-auto" id="menu"></button>
+      </div>
+      <nav class="navbar navbar-header" data-background-color="blue2">
+        <div class="container-fluid">
+          <div class="ml-auto d-flex align-items-center legacy-profile">
+            <button id="theme" class="legacy-header-button"></button>
+            <div class="avatar-sm">
+              <span class="avatar-img rounded-circle" data-avatar="">A</span>
+            </div>
+            <div>
+              <b data-admin-name="">Admin</b><small data-admin-role="">ADMIN</small>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="sidebar sidebar-style-2">
+      <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+          <div class="user">
+            <div class="avatar-sm float-left mr-2">
+              <span class="avatar-img rounded-circle legacy-avatar" data-avatar="">A</span>
+            </div>
+            <div class="info">
+              <a><span data-admin-name="">Admin</span><span class="user-level" data-admin-role="">ADMIN</span></a>
+            </div>
+          </div>
+          <ul class="nav nav-primary">
+            <li class="nav-item" data-nav="dashboard">
+              <a href="dashboard/">
+              <p>Dashboard</p></a>
+            </li>
+            <li class="nav-item" data-nav="users" data-permission="users">
+              <a href="users/">
+              <p>Manage Users Account</p></a>
+            </li>
+            <li class="nav-item" data-nav="transactions" data-permission="transactions">
+              <a href="transactions/">
+              <p>Users Transactions</p></a>
+            </li>
+            <li class="nav-item" data-nav="finance" data-permission="finance">
+              <a href="finance/">
+              <p>Finance Management</p></a>
+            </li>
+            <li class="nav-section">
+              <h4 class="text-section">More Management</h4>
+            </li>
+            <li class="nav-item">
+              <a href="#">
+              <p>Referral & Cashback</p></a>
+            </li>
+            <li class="nav-item">
+              <a href="#">
+              <p>Sales Analysis</p></a>
+            </li>
+            <li class="nav-section">
+              <h4 class="text-section">Session</h4>
+            </li>
+            <li class="nav-item">
+              <a id="logout" href="javascript:void(0)">
+              <p>Logout</p></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main-panel">
+      <div class="content">
+        <div class="page-inner">
+          <div class="page-header"><h4 class="page-title">Finance Management</h4><ul class="breadcrumbs"><li class="nav-home"><a href="dashboard/"><i class="flaticon-home"></i></a></li><li class="separator"><i class="flaticon-right-arrow"></i></li><li class="nav-item">Finance</li></ul></div>
+          <div class="card">
+            <div class="card-header">
+              <div class="d-flex align-items-center flex-wrap old-tab-buttons" style="gap:10px"><h4 class="card-title mb-0 mr-auto">Credit User</h4>
+                <button class="btn btn-primary btn-sm active" data-tab="credit-pane"><i class="fas fa-plus-circle"></i> Credit User</button><button class="btn btn-light btn-sm" data-tab="debit-pane"><i class="fas fa-minus-circle"></i> Debit User</button><button class="btn btn-light btn-sm" data-tab="upgrade-pane"><i class="fas fa-user-tag"></i> Upgrade User</button><button class="btn btn-light btn-sm" data-tab="coupon-pane"><i class="fas fa-ticket-alt"></i> Create Coupon Code</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <datalist id="user-list"></datalist>
+              <section id="credit-pane" class="finance-pane">
+                <div class="finance-box box w3-card-4"><h2 class="w3-center">Credit User account</h2>
+                <form id="credit-form" name="credit-form"><div class="row"><div class="col-sm-8"><div class="form-group"><label>Amount</label><input class="form-control" id="credit-amount" type="number" min="1" step="0.01" required></div><div class="form-group"><label>Account username</label><input class="form-control finance-user-autocomplete" id="credit-user" list="user-list" autocomplete="off" placeholder="Start typing username or name" required><small class="form-text text-muted">Type at least 2 characters to search users.</small></div><button class="btn btn-primary">Proceed</button></div></div>
+                </form>
+                </div>
+              </section>
+              <section id="debit-pane" class="finance-pane" hidden="">
+                <div class="finance-box box w3-card-4"><h2 class="w3-center">Debit User account</h2>
+                <form id="debit-form" name="debit-form"><div class="row"><div class="col-sm-8"><div class="form-group"><label>Amount</label><input class="form-control" id="debit-amount" type="number" min="1" step="0.01" required></div><div class="form-group"><label>Account username</label><input class="form-control finance-user-autocomplete" id="debit-user" list="user-list" autocomplete="off" placeholder="Start typing username or name" required></div><button class="btn btn-primary">Proceed</button></div></div>
+                </form>
+                </div>
+              </section>
+              <section id="upgrade-pane" class="finance-pane" hidden="">
+                <div class="finance-box box w3-card-4"><h2 class="w3-center">Upgrade Account</h2>
+                <form id="upgrade-form" name="upgrade-form"><div class="row"><div class="col-sm-8"><div class="form-group"><label>Username</label><input class="form-control finance-user-autocomplete" id="upgrade-user" list="user-list" autocomplete="off" placeholder="Start typing username or name" required></div><div class="form-group"><label>Account Type</label><select class="form-control" id="account-type">
+                    <option>
+                      SMART
+                    </option>
+                    <option>
+                      AFFILIATE
+                    </option>
+                    <option>
+                      TOPUP
+                    </option>
+                    <option>
+                      API
+                    </option>
+                  </select></div><button class="btn btn-primary">Proceed</button></div></div>
+                </form>
+                </div>
+              </section>
+              <section id="coupon-pane" class="finance-pane" hidden="">
+                <div class="finance-box box w3-card-4"><h2 class="w3-center">Create Coupon Code</h2>
+                <form id="coupon-form" name="coupon-form"><div class="row"><div class="col-sm-8"><div class="form-group"><label>Username</label><input class="form-control finance-user-autocomplete" id="coupon-user" list="user-list" autocomplete="off" placeholder="Start typing username or name" required></div><div class="form-group"><label>Coupon Code</label><input class="form-control" id="coupon-code" required></div><div class="form-group"><label>Amount</label><input class="form-control" id="coupon-amount" type="number" min="1" required></div><button class="btn btn-primary">Proceed</button></div></div>
+                </form>
+                </div>
+                <div class="table-responsive mt-4">
+                  <table class="display table table-striped table-hover w-100">
+                    <thead>
+                      <tr>
+                        <th>Code</th>
+                        <th>Customer</th>
+                        <th>Value</th>
+                        <th>Created</th>
+                        <th>Status</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody id="coupons-body"></tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scrim"></div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="./assets/js/finance.js?v=20260905-2"></script>
+</body>
+</html>

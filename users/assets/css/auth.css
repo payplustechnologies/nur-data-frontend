@@ -1,0 +1,28 @@
+.auth-card-wide { width: min(620px, 100%); padding: 32px 38px; }
+.auth-card-wide form { margin-top: 20px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.optional { margin-left: 5px; color: var(--muted); font-size: 10px; font-weight: 500; }
+.check-row { display: flex !important; align-items: flex-start; gap: 10px; margin: -2px 0 20px !important; color: var(--muted); font-weight: 500 !important; line-height: 1.4; }
+.check-row input { width: 17px; height: 17px; flex: none; accent-color: var(--brand); }
+.auth-icon { display: grid; place-items: center; width: 54px; height: 54px; margin-bottom: 22px; border-radius: 17px; color: var(--brand); background: #edf1ff; font-size: 23px; }
+.otp-field input { font-size: 20px; font-weight: 700; letter-spacing: .3em; }
+.toast[data-type="success"] { background: #16803d; }
+.mbr-alert { border-radius:24px!important; font-family:Ubuntu,sans-serif!important; }
+@media (max-width: 900px) {
+  .auth-page { position: relative; overflow-x: hidden; background: radial-gradient(circle at 88% 5%, rgba(111,132,255,.42) 0 70px, transparent 72px), radial-gradient(circle at 5% 19%, rgba(255,255,255,.08) 0 92px, transparent 94px), linear-gradient(160deg, #07143d 0 315px, #edf1f8 316px 100%); }
+  .auth-page::before { content: "SECURE • SIMPLE • RELIABLE"; position: absolute; top: 58px; left: 50%; width: max-content; transform: translateX(-50%); color: rgba(255,255,255,.62); font-size: 10px; font-weight: 700; letter-spacing: .2em; }
+  .auth-wrap { display: block; min-height: 100vh; padding: 104px 14px 28px; }
+  .auth-card, .auth-card-wide { position: relative; width: 100%; max-width: 560px; min-height: auto; margin: 0 auto; padding: 27px 22px 25px; border: 1px solid rgba(255,255,255,.8); border-radius: 30px; box-shadow: 0 24px 60px rgba(7,20,61,.22); }
+  .auth-card::before { content: ""; position: absolute; top: 0; left: 28px; right: 28px; height: 4px; border-radius: 0 0 10px 10px; background: linear-gradient(90deg, var(--brand), #6174e8); }
+  .mobile-brand { margin-bottom: 22px; }
+  .mobile-brand .brand-mark.small { width: 46px; height: 46px; border-radius: 15px; box-shadow: 0 10px 22px rgba(19,43,134,.25); }
+  .mobile-brand b { font-size: 17px; }
+  .auth-card h2 { font-size: 27px; }
+  .auth-card form { margin-top: 22px; }
+  .field { height: 54px; margin-bottom: 17px; background: #f5f7fb; }
+  .primary-btn { box-shadow: 0 13px 25px rgba(19,43,134,.2); }
+  .auth-foot { margin-top: 21px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .auth-icon { position: absolute; top: 24px; right: 22px; margin: 0; }
+}
+@media (max-width: 620px) { .form-grid { grid-template-columns: 1fr; gap: 0; } .auth-card-wide .field { margin-bottom: 15px; } }
+@media (max-width: 380px) { .auth-wrap { padding: 88px 10px 20px; } .auth-card, .auth-card-wide { padding: 24px 18px 22px; border-radius: 26px; } }
