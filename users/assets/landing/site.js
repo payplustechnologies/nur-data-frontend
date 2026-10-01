@@ -95,7 +95,11 @@ function renderContact(settings = {}) {
   const dial = phone.replace(/[^+\d]/g, '');
   setLink('[data-contact-phone]', /^\+?\d{7,15}$/.test(dial) ? `tel:${dial}` : '', phone);
 
-  const whatsapp = whatsappLink(settings.whatlink || support.whatsapp);
+  // Nur has no approved support number yet. Its database currently contains
+  // a copied MBR link, so never publish that link on Nur's landing page.
+  const whatsapp = CLIENT_CONFIG.clientKey === 'nur-data'
+    ? ''
+    : whatsappLink(settings.whatlink || support.whatsapp);
   setLink('[data-contact-whatsapp]', whatsapp);
 
   const address = String(settings.address || support.address || '').trim();
